@@ -22,6 +22,9 @@ class Transfer
   end
 
   def execute_transaction
+
+    #if sender is invalid or transfer amount is
+    #greater than the sender's account balance
     if !@sender.valid? || @amount > @sender.balance
       @status="rejected"
       "Transaction rejected. Please check your account balance."
